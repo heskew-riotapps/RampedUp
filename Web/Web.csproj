@@ -213,7 +213,7 @@
     <Folder Include="Client\images\" />
     <Folder Include="Client\scripts\app\" />
     <Folder Include="Client\scripts\vendors\" />
-    <Folder Include="Controllers\MVC\" />
+    <Folder Include="Controllers\Mvc\" />
     <Folder Include="Controllers\WebApi\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Home\" />
