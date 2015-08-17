@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>HeyMetro | Responsive Web Admin App with AngularJS And Bootstrap</title>
+  <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="stylesheet" href="../bower_components/animate.css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" type="text/css" />
+  <link rel="stylesheet" href="styles/font.css" type="text/css" />
+  <link rel="stylesheet" href="styles/app.css" type="text/css" />
+  <link rel="stylesheet" href="styles/themify-icons.css" type="text/css" />
+
+</head>
+<body>
+<div class="app app-header-fixed">
+  
+
+<div class="container">  
+  <div class="center-block w-xl w-auto-xs m-b-lg">
+    <div class="text-2x m-v-lg text-primary"><i class="glyphicon glyphicon-th-large text-xl"></i> HeyMetro</div>
+    <div class="m-b text-sm">
+      Sign in with your HeyMetro Account
+    </div>
+    <form name="form">
+      <div class="form-group m-b-xs">
+        <label class="hide">Email</label>
+        <input type="email" placeholder="Someone@example.com" class="form-control" ng-model="user.email" required>
+      </div>
+      <div class="form-group m-b-xs">
+        <label class="hide">Password</label>
+        <input type="password" placeholder="Password" class="form-control" ng-model="user.password" required>
+      </div>      
+      <div class="checkbox no-margin">        
+        <label class="ui-checks">
+          <input type="checkbox"><i></i> Keep me signed in
+        </label>
+      </div>
+      <button type="submit" class="btn btn-info p-h-md m-v-lg">Sign in</button>
+      <p class="text-xs"><a ui-sref="forgot-password">Forgot password?</a></p>
+      <p class="m-v-lg text-sm">Do not have an account? <a ui-sref="signup">Create an account</a></p>
+    </form>
+  </div>
+</div>
+<div class="app-footer" ng-include="'views/footer.html'"></div>
+
+
+</div>
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="scripts/ui-load.js"></script>
+<script src="scripts/ui-jp.config.js"></script>
+<script src="scripts/ui-jp.js"></script>
+<script src="scripts/ui-nav.js"></script>
+<script src="scripts/ui-toggle.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>HeyMetro | Responsive Web Admin App with AngularJS And Bootstrap</title>
+  <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="stylesheet" href="../bower_components/animate.css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" type="text/css" />
+  <link rel="stylesheet" href="styles/font.css" type="text/css" />
+  <link rel="stylesheet" href="styles/app.css" type="text/css" />
+  <link rel="stylesheet" href="styles/themify-icons.css" type="text/css" />
+
+</head>
+<body>
+<div class="app app-header-fixed">
+  
+  <!-- header -->
+  <header id="header" class="app-header navbar" role="menu">
+          <!-- navbar header -->
+      <div class="navbar-header bg-dark">
+        <button class="pull-right visible-xs" ui-toggle="show" target=".navbar-collapse">
+          <i class="ti-settings"></i>
+        </button>
+        <button class="pull-right visible-xs" ui-toggle="show" target=".app-aside">
+          <i class="ti-menu"></i>
+        </button>
+        <!-- brand -->
+        <a class="navbar-brand text-lt">
+          <i class="pull-right ti-arrow-circle-down text-sm m-v-xs m-l-xs"></i>
+          <i class="glyphicon glyphicon-th-large text-md"></i>
+          <img src="images/logo.png" alt="." class="hide">
+          <span class="hidden-folded m-l-xs">HeyMetro<sup class="text-xs font-thin">1.3</sup></span>
+        </a>
+        <!-- / brand -->
+      </div>
+      <!-- / navbar header -->
+
+      <!-- navbar collapse -->
+      <div class="navbar-collapse bg-white box-shadow-md hidden-xs">
+        <!-- nav -->
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+            <a href="index.html">
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="email.html">
+              Email
+            </a>
+          </li>
+          <li>
+            <a href="ui.arrow.html">
+              UI Kits
+            </a>
+          </li>
+          <li>
+            <a href="page.profile.html">
+              Pages
+            </a>
+          </li>
+        </ul>
+        <!-- / nav -->
+
+        <!-- nabar right -->
+        <ul class="nav navbar-nav navbar-right m-r-n">
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown">
+              <i class="glyphicon glyphicon-comment"></i>
+              <b class="badge badge-xs bg-warning up">3</b>
+              <span class="visible-xs-inline">Notifications</span>
+            </a>
+            <div class="dropdown-menu no-b-t w-xl">
+              <div class="panel bg-white bg-inherit">
+                <div class="panel-heading b-light bg-light">
+                  <strong>You have <span class="count">2</span> notifications</strong>
+                </div>
+                <div class="list-group list-group-alt">
+                  <a href="#" class="list-group-item">
+                    <span class="pull-left w-thumb-sm m-r-sm m-t-xs">
+                      <img src="images/a1.jpg" alt="..." class="img-responsive">
+                    </span>
+                    <span class="clear block">
+                      Amadar upload a photo to her album<br>
+                      <small>7 minutes ago</small>
+                    </span>
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <span class="clear block m-b-none">
+                      Just signed in<br>
+                      <small>1 hour ago</small>
+                    </span>
+                  </a>
+                </div>
+                <div class="panel-footer text-sm">
+                  <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
+                  <a href="#notes" data-toggle="class:show animated fadeInRight">See all</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="dropdown">            
+            <a href="#" class="clear no-padding-h" data-toggle="dropdown">
+              <img src="images/a0.jpg" alt="..." class="navbar-img pull-right">
+              <span class="hidden-sm m-l">David M.</span>
+              <b class="caret m-h-xs hidden-sm"></b>
+            </a>
+            <ul class="dropdown-menu pull-right no-b-t">
+              <li>
+                <a href="page.profile.html">Profile</a>
+              </li>
+              <li>
+                <a href="page.settings.html">Settings</a>
+              </li>
+              <li class="divider">
+              <li>
+                <a href="lockme.html">Lock me</a>
+              </li>
+              <li>
+                <a href="signin.html">Logout</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- / navbar right -->
+
+        <!-- search form -->
+        <form class="navbar-form navbar-form-sm navbar-right visible-xs" role="search">
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-sm no-bg btn-icon no-shadow no-padder"><i class="ti-search"></i></button>
+              </span>
+              <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm no-bg no-border" placeholder="Search...">              
+            </div>
+          </div>
+        </form>
+        <!-- / search form -->
+      </div>
+      <!-- / navbar collapse -->
+
+  </header>
+  <!-- / header -->
+
+  <!-- aside -->
+  <aside id="aside" class="app-aside hidden-xs bg-dark lt">
+    <div class="app-aside-inner" bs-affix>
+  <div class="app-aside-body scrollable hover">
+    <nav ui-nav>
+  <ul class="nav">
+    <li class="nav-header h4 m-v-sm">
+      UI Kits
+    </li>
+    <li>
+      <a>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <i class="icon glyphicon glyphicon-briefcase text-lt"></i>
+        <span class="font-normal">Components</span>
+      </a>
+      <ul class="nav nav-sub bg">
+        <li>
+          <a href="ui.arrow.html">Arrow</a>
+        </li>
+        <li>
+          <a href="ui.badge-label.html">Badge &amp; Label</a>
+        </li>
+        <li>
+          <a href="ui.button.html">Button</a>
+        </li>
+        <li>
+          <a href="ui.color.html">Color</a>
+        </li>
+        <li>
+          <a href="ui.grid.html">Grid</a>
+        </li>
+        <li>
+          <a href="ui.icon.html">Icon</a>
+        </li>
+        <li>
+          <a href="ui.list.html">List Group</a>
+        </li>
+        <li>
+          <a href="ui.nav.html">Nav</a>
+        </li>
+        <li>
+          <a href="ui.panel.html">Panel</a>
+        </li>
+        <li>
+          <a href="ui.progressbar.html">Progressbar</a>
+        </li>
+        <li>
+          <a href="ui.streamline.html">Streamline</a>
+        </li>
+        <li>
+          <a href="ui.timeline.html">Timeline</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <i class="icon glyphicon glyphicon-edit text-lt"></i>
+        <span class="font-normal">Form</span>
+      </a>
+      <ul class="nav nav-sub bg">
+        <li>
+          <a href="ui.form.layout.html">Form Layout</a>
+        </li>
+        <li>
+          <a href="ui.form.element.html">Form Element</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <i class="icon glyphicon glyphicon-list text-lt"></i>
+        <span class="font-normal">Table</span>
+      </a>
+      <ul class="nav nav-sub bg">
+        <li>
+          <a href="ui.table.html">Static table</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="ui.chart.html">
+        <b class="label bg-primary pull-right">NEW</b>    
+        <i class="icon glyphicon glyphicon-stats text-lt"></i>
+        <span class="font-normal">Charts</span>
+      </a>
+    </li>
+    <li ng-class="{active:$state.includes('ui.map')}">
+      <a>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <i class="icon glyphicon glyphicon-map-marker text-lt"></i>
+        <span class="font-normal">Maps</span>
+      </a>
+      <ul class="nav nav-sub bg">
+        <li>
+          <a href="ui.map.vector.html">Vector Map</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <i class="icon glyphicon glyphicon-random text-lt"></i>
+        <span>Nav levels</span>
+      </a>
+      <ul class="nav nav-sub bg">
+        <li><a href>Nav levels 1</a></li>
+        <li>
+          <a href>
+            <span class="pull-right text-muted">
+              <i class="fa fa-caret-down"></i>
+            </span>
+            <span class="font-normal">Nav levels 2</span>
+          </a>
+          <ul class="nav nav-sub bg">
+            <li>
+              <a href>Nav levels 2.1</a>
+            </li>
+            <li>
+              <a href>Nav levels 2.2</a>
+            </li>
+          </ul>          
+        </li>        
+      </ul>
+    </li>
+    <li class="nav-header m-v-sm">
+      Help
+    </li>
+    <li>
+      <a href="../angular">
+        <span class="font-bold">Angular version</span>
+      </a>
+    </li>
+    <li>
+      <a href="http://themeforest.net/item/heymetro-bootstrap-web-app-theme-with-angularjs/9266245/comments">
+        <span class="font-bold">Support</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  </div>
+  <div class="app-aside-footer p text-xs text-center">
+    <span><strong class="text-lt">3.5</strong>GB</span>
+    <div class="progress progress-xs bg no-margin m-h-xs inline w-xs">
+      <div class="progress-bar progress-bar-info" style="width:30%"></div>
+    </div>
+    <span>10GB</span>
+  </div>
+</div>
+  </aside>
+  <!-- / aside -->
+  
+  <!-- content -->
+  <div id="content" class="app-content" role="main">
+    
+
+<div class="p-h-md p-v bg-white box-shadow pos-rlt">
+  <h3 class="no-margin">Static tables</h3>
+</div>
+<div class="p-md">
+  <div class="panel panel-default">
+    <div class="panel-heading">Basic</div>
+    <div class="panel-body">
+      For basic styling—light padding and only horizontal dividers—add the base class .table to any &lt;table>. It may seem super redundant, but given the widespread use of tables for other plugins like calendars and date pickers, we've opted to isolate our custom table styles.
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>    
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">Striped rows</div>
+    <div class="panel-body">
+      Use .table-striped to add zebra-striping to any table row within the &lt;tbody>.
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h5>Bordered table</h5>
+  <table class="table table-bordered table-hover bg-white">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="2">1</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@TwBootstrap</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5>Responsive table</h5>
+  <div class="table-responsive">
+    <table class="table table-bordered bg-white">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+  </div>
+  <!-- / content -->
+
+  <!-- footer -->
+  <footer id="footer" class="app-footer" role="footer">
+    <div class="p bg-white text-xs">
+  <div class="pull-right hidden-xs hidden-sm text-muted">
+    <strong>HeyMetro</strong> - Built with AngularJS &amp; Bootstrap  &copy; Copyright 2014
+  </div>
+  <ul class="list-inline no-margin text-center-xs">
+    <li>
+      <a href="page.document.html">Documents</a>
+    </li>
+    <li class="text-muted">-</li>    
+    <li>
+      <a href="http://themeforest.net/user/heyflat/portfolio?ref=heyflat" target="_blank">Purchase</a>
+    </li>
+  </ul>
+</div>
+  </footer>
+  <!-- / footer -->
+
+</div>
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="scripts/ui-load.js"></script>
+<script src="scripts/ui-jp.config.js"></script>
+<script src="scripts/ui-jp.js"></script>
+<script src="scripts/ui-nav.js"></script>
+<script src="scripts/ui-toggle.js"></script>
+
+</body>
+</html>

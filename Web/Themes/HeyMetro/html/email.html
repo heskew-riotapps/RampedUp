@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>HeyMetro | Responsive Web Admin App with AngularJS And Bootstrap</title>
+  <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="stylesheet" href="../bower_components/animate.css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" type="text/css" />
+  <link rel="stylesheet" href="styles/font.css" type="text/css" />
+  <link rel="stylesheet" href="styles/app.css" type="text/css" />
+  <link rel="stylesheet" href="styles/themify-icons.css" type="text/css" />
+
+</head>
+<body>
+<div class="app app-header-fixed">
+  
+  <!-- header -->
+  <header id="header" class="app-header navbar" role="menu">
+          <!-- navbar header -->
+      <div class="navbar-header bg-dark">
+        <button class="pull-right visible-xs" ui-toggle="show" target=".navbar-collapse">
+          <i class="ti-settings"></i>
+        </button>
+        <button class="pull-right visible-xs" ui-toggle="show" target=".app-aside">
+          <i class="ti-menu"></i>
+        </button>
+        <!-- brand -->
+        <a class="navbar-brand text-lt">
+          <i class="pull-right ti-arrow-circle-down text-sm m-v-xs m-l-xs"></i>
+          <i class="glyphicon glyphicon-th-large text-md"></i>
+          <img src="images/logo.png" alt="." class="hide">
+          <span class="hidden-folded m-l-xs">HeyMetro<sup class="text-xs font-thin">1.3</sup></span>
+        </a>
+        <!-- / brand -->
+      </div>
+      <!-- / navbar header -->
+
+      <!-- navbar collapse -->
+      <div class="navbar-collapse bg-white box-shadow-md hidden-xs">
+        <!-- nav -->
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+            <a href="index.html">
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="email.html">
+              Email
+            </a>
+          </li>
+          <li>
+            <a href="ui.arrow.html">
+              UI Kits
+            </a>
+          </li>
+          <li>
+            <a href="page.profile.html">
+              Pages
+            </a>
+          </li>
+        </ul>
+        <!-- / nav -->
+
+        <!-- nabar right -->
+        <ul class="nav navbar-nav navbar-right m-r-n">
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown">
+              <i class="glyphicon glyphicon-comment"></i>
+              <b class="badge badge-xs bg-warning up">3</b>
+              <span class="visible-xs-inline">Notifications</span>
+            </a>
+            <div class="dropdown-menu no-b-t w-xl">
+              <div class="panel bg-white bg-inherit">
+                <div class="panel-heading b-light bg-light">
+                  <strong>You have <span class="count">2</span> notifications</strong>
+                </div>
+                <div class="list-group list-group-alt">
+                  <a href="#" class="list-group-item">
+                    <span class="pull-left w-thumb-sm m-r-sm m-t-xs">
+                      <img src="images/a1.jpg" alt="..." class="img-responsive">
+                    </span>
+                    <span class="clear block">
+                      Amadar upload a photo to her album<br>
+                      <small>7 minutes ago</small>
+                    </span>
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <span class="clear block m-b-none">
+                      Just signed in<br>
+                      <small>1 hour ago</small>
+                    </span>
+                  </a>
+                </div>
+                <div class="panel-footer text-sm">
+                  <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
+                  <a href="#notes" data-toggle="class:show animated fadeInRight">See all</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="dropdown">            
+            <a href="#" class="clear no-padding-h" data-toggle="dropdown">
+              <img src="images/a0.jpg" alt="..." class="navbar-img pull-right">
+              <span class="hidden-sm m-l">David M.</span>
+              <b class="caret m-h-xs hidden-sm"></b>
+            </a>
+            <ul class="dropdown-menu pull-right no-b-t">
+              <li>
+                <a href="page.profile.html">Profile</a>
+              </li>
+              <li>
+                <a href="page.settings.html">Settings</a>
+              </li>
+              <li class="divider">
+              <li>
+                <a href="lockme.html">Lock me</a>
+              </li>
+              <li>
+                <a href="signin.html">Logout</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- / navbar right -->
+
+        <!-- search form -->
+        <form class="navbar-form navbar-form-sm navbar-right visible-xs" role="search">
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-sm no-bg btn-icon no-shadow no-padder"><i class="ti-search"></i></button>
+              </span>
+              <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm no-bg no-border" placeholder="Search...">              
+            </div>
+          </div>
+        </form>
+        <!-- / search form -->
+      </div>
+      <!-- / navbar collapse -->
+
+  </header>
+  <!-- / header -->
+
+  <!-- aside -->
+  <aside id="aside" class="app-aside hidden-xs bg-dark lt">
+    <div class="app-aside-inner" bs-affix>
+  <div class="app-aside-body scrollable hover">
+    <nav ui-nav>
+  <div class="p p-v-md hidden-aside-top">
+    <a href="#" class="btn btn-sm btn-addon btn-success"><i class="fa fa-plus fa-fw"></i> Compose</a>
+  </div>
+  <ul class="nav nav-stacked nav-pills m-h-sm">
+    <li class="nav-header text-muted text-xs">
+      Folders
+    </li>
+    <li>
+      <a ui-sref="mail.dashboard">
+        <b class="label rounded bg-info pull-right">130</b>
+        <i class="glyphicon glyphicon-inbox text-lt"></i>
+        <span class="font-bold">Inbox</span>
+      </a>
+    </li>
+    <li>
+      <a ui-sref="app.calendar">
+        <i class="glyphicon glyphicon-send text-lt"></i>
+        <span class="font-bold">Sent Mail</span>
+      </a>
+    </li>
+    <li>
+      <a ui-sref="app.calendar">
+        <i class="glyphicon glyphicon-bookmark text-lt"></i>
+        <span class="font-bold">Bookmarked</span>
+      </a>
+    </li>
+    <li>
+      <a ui-sref="app.mail.list">
+        <b class="label rounded bg-info pull-right">9</b>
+        <i class="glyphicon glyphicon-edit text-lt"></i>
+        <span class="font-bold">Draft</span>
+      </a>
+    </li>
+    <li>
+      <a ui-sref="app.mail.list">
+        <i class="glyphicon glyphicon-trash text-lt"></i>
+        <span class="font-bold">Trash</span>
+      </a>
+    </li>
+    <li>
+      <div class="line bg m-h-sm"></div>
+    </li>
+    <li class="nav-header text-muted text-xs">
+      Labels
+    </li>
+    <li>
+      <a href>
+        <i class="fa fa-circle-o text-info-dk"></i> Github
+      </a>
+    </li>
+    <li>
+      <a href>
+        <i class="fa fa-circle-o text-success-dk"></i> Facebook
+      </a>
+    </li>
+    <li>
+      <a href>
+        <i class="fa fa-circle-o text-lt"></i> Youtube
+      </a>
+    </li>
+  </ul>
+</nav>
+  </div>
+  <div class="app-aside-footer p text-xs text-center">
+    <span><strong class="text-lt">3.5</strong>GB</span>
+    <div class="progress progress-xs bg no-margin m-h-xs inline w-xs">
+      <div class="progress-bar progress-bar-info" style="width:30%"></div>
+    </div>
+    <span>10GB</span>
+  </div>
+</div>
+  </aside>
+  <!-- / aside -->
+  
+  <!-- content -->
+  <div id="content" class="app-content" role="main">
+    
+
+<div class="app-content-inner">
+  <div class="box">
+    <div class="col-md-4">
+      <div class="box b-r">
+        <div class="p p-v-sm b-b">
+          <script type="text/ng-template" id="filter">
+            <ul tabindex="-1" class="dropdown-menu" role="menu">
+              <li><a >Read</a></li>
+              <li><a >Unread</a></li>
+            </ul>
+          </script>
+          <a href class="pull-right text-muted"><i class="fa fa-trash"></i></a>
+          <a href class="btn btn-default btn-xs text-muted" bs-dropdown="dropdown" data-animation="am-flip-x" data-template="filter">
+            Filter <span class="caret"></span>
+          </a>
+        </div>
+        <!-- use box row -->
+        <div class="box-row">
+          <div class="box-cell scrollable hover">
+            <div class="box-inner">
+              <!-- mail list -->
+              <div class="list-group list-group-md no-border no-radius no-margin">
+                <div class="list-group-item">
+                  <a href class="w-thumb-md pull-left m-r"><img src="images/a0.jpg" class="img-responsive"></a>
+                  <div class="clear m-b-sm">
+                    <span class="pull-right text-muted text-xs">
+                      12:30 PM
+                      <label class="ui-checks m-l-sm"><input type="checkbox"><i></i></label>
+                    </span>
+                    <div>David M.</div>
+                    <a href class="text-md text-ellipsis">Easy Angular development with Yeoman</a>
+                  </div>
+                  <small class="text-muted">One of the best things to happen in web development over the past few years has been the variety of tools</small>
+                </div>
+                <div class="list-group-item select">
+                  <a href class="w-thumb-md pull-left m-r"><img src="images/a1.jpg" class="img-responsive"></a>
+                  <div class="clear m-b-sm">
+                    <span class="pull-right text-muted text-xs">
+                      10:34 PM 
+                      <i class="fa fa-paperclip m-l-sm"></i>
+                      <label class="ui-checks m-l-sm"><input type="checkbox"><i></i></label>
+                    </span>
+                    <div>Eric Dane</div>
+                    <a href class="text-md text-ellipsis">This is a short and opinionated review of the AngularJS</a>
+                  </div>
+                  <small class="text-muted">AngularJS is what HTML would have been, designed for building web-apps.</small>
+                </div>
+                <div class="list-group-item">
+                  <a href class="w-thumb-md pull-left m-r"><img src="images/a2.jpg" class="img-responsive"></a>
+                  <div class="clear m-b-sm">
+                    <span class="pull-right text-muted text-xs">
+                      9:34 PM 
+                      <i class="fa fa-paperclip m-l-sm"></i>
+                      <label class="ui-checks m-l-sm"><input type="checkbox"><i></i></label>
+                    </span>
+                    <div>Ryan Gosling</div>
+                    <a href class="text-md text-ellipsis">Correct the known issue</a>
+                  </div>
+                  <small class="text-muted">This is a known issue. Please set the correct node write permissions with sudo</small>
+                </div>
+                <div class="list-group-item">
+                  <a href class="w-thumb-md pull-left m-r"><img src="images/a4.jpg" class="img-responsive"></a>
+                  <div class="clear m-b-sm">
+                    <span class="pull-right text-muted text-xs">
+                      July 9
+                      <label class="ui-checks m-l-sm"><input type="checkbox"><i></i></label>
+                    </span>
+                    <div>Richard Hammond</div>
+                    <a href class="text-md text-ellipsis">Angular bootstrap</a>
+                  </div>
+                  <small class="text-muted">Native AngularJS (Angular) directives for Bootstrap. Small footprint</small>
+                </div>
+                <div class="list-group-item">
+                  <a href class="w-thumb-md pull-left m-r"><img src="images/a5.jpg" class="img-responsive"></a>
+                  <div class="clear m-b-sm">
+                    <span class="pull-right text-muted text-xs">
+                      March 10
+                      <i class="fa fa-paperclip m-l-sm"></i>
+                      <label class="ui-checks m-l-sm"><input type="checkbox"><i></i></label>
+                    </span>
+                    <div>Ossily</div>
+                    <a href class="text-md text-ellipsis">Building an Angular App: Bootstrapping</a>
+                  </div>
+                  <small class="text-muted">Using angular.bootstrap to Initialize Your App</small>
+                </div>
+                <div class="list-group-item">
+                  <a href class="w-thumb-md pull-left m-r"><img src="images/a6.jpg" class="img-responsive"></a>
+                  <div class="clear m-b-sm">
+                    <span class="pull-right text-muted text-xs">
+                      Feb 8
+                      <i class="fa fa-paperclip m-l-sm"></i>
+                      <label class="ui-checks m-l-sm"><input type="checkbox"><i></i></label>
+                    </span>
+                    <div>Patrick</div>
+                    <a href class="text-md text-ellipsis">AngularJS Documentation for bootstrap</a>
+                  </div>
+                  <small class="text-muted">Place ng-app to the root of your application</small>
+                </div>
+              </div>
+              <!-- / mail list -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="box">
+        <div class="p p-v-sm b-b">
+          <script type="text/ng-template" id="label">
+            <ul tabindex="-1" class="dropdown-menu" role="menu">
+              <li><a >Sent</a></li>
+              <li><a >Trash</a></li>
+              <li><a >Work</a></li>
+              <li><a >Project</a></li>
+            </ul>
+          </script>
+          <div class="btn-group pull-right">
+            <button type="button" class="btn btn-xs btn-default"><i class="fa fa-fw fa-angle-left"></i></button>
+            <button type="button" class="btn btn-xs btn-default"><i class="fa fa-fw fa-angle-right"></i></button>
+          </div>
+          <a href class="btn btn-default btn-xs text-muted" bs-dropdown="dropdown" data-animation="am-flip-x" data-template="label">
+            Label <span class="caret"></span>
+          </a>
+          <a href class="btn btn-default btn-xs text-muted">More <span class="caret"></span></a>
+        </div>
+        <div class="box-row">
+          <div class="box-cell">
+            <div class="box-inner">
+              <!-- mail detail -->
+              <div class="p b-b">
+                <h4 class="no-margin font-bold">This is a short and opinionated review of the AngularJS</h4>
+                <div class="m-t-sm">
+                  <div class="pull-right">Oct 14</div>
+                  <div class="w-thumb-sm pull-left m-r-sm"><img src="images/a1.jpg" class="img-responsive"></div>
+                  <div class="clear l-h-1x">
+                    <div><strong>Eric Dane</strong> &lt;eric.dane@gmail.com></div>
+                    <div>to me</div>
+                  </div>
+                </div>
+              </div>       
+              <div class="p-lg">                
+                <p>Hey David,</p>
+                <p class="text-lt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat.</p>
+                <blockquote>
+                  <em>Phasellus at ultricies neque, quis malesuada augue. Donec eleifend condimentum nisl eu consectetur. Integer eleifend, nisl venenatis consequat iaculis, lectus arcu malesuada sem, dapibus porta quam lacus eu neque.</em>
+                </blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat. Phasellus at ultricies neque, quis malesuada augue. Donec eleifend condimentum nisl eu consectetur. Integer eleifend, nisl venenatis consequat iaculis, lectus arcu malesuada sem, dapibus porta quam lacus eu neque.</p>
+                <p>Duis non malesuada est, quis congue nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                <p>Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat. Phasellus at ultricies neque, quis malesuada augue. Donec eleifend condimentum nisl eu consectetur. Integer eleifend, nisl venenatis consequat iaculis, lectus arcu malesuada sem, dapibus porta quam lacus eu neque.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non malesuada est, quis congue nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                <p>Consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat. Phasellus at ultricies neque, quis malesuada augue. Donec eleifend</p>
+                <p>&nbsp;</p>
+                <p>Best Regards</p>
+              </div>
+              <!-- / mail detail -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+  <!-- / content -->
+
+  <!-- footer -->
+  <footer id="footer" class="app-footer" role="footer">
+    <div class="p bg-white text-xs">
+  <div class="pull-right hidden-xs hidden-sm text-muted">
+    <strong>HeyMetro</strong> - Built with AngularJS &amp; Bootstrap  &copy; Copyright 2014
+  </div>
+  <ul class="list-inline no-margin text-center-xs">
+    <li>
+      <a href="page.document.html">Documents</a>
+    </li>
+    <li class="text-muted">-</li>    
+    <li>
+      <a href="http://themeforest.net/user/heyflat/portfolio?ref=heyflat" target="_blank">Purchase</a>
+    </li>
+  </ul>
+</div>
+  </footer>
+  <!-- / footer -->
+
+</div>
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="scripts/ui-load.js"></script>
+<script src="scripts/ui-jp.config.js"></script>
+<script src="scripts/ui-jp.js"></script>
+<script src="scripts/ui-nav.js"></script>
+<script src="scripts/ui-toggle.js"></script>
+
+</body>
+</html>
