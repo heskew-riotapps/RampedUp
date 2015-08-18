@@ -8,10 +8,10 @@ namespace RampedUp.Objects.Interfaces
 {
     public interface IAuditable
     {
-        public Guid CreatedBy { get; set; }
-        public DateTime CreatedOn { get; set; }
+        Guid CreatedBy { get; set; }
+        DateTime CreatedOn { get; set; }
 
-        public Guid UpdatedBy { get; set; }
-        public DateTime UpdatedOn { get; set; }
+        Guid UpdatedBy { get; set; }
+        DateTime UpdatedOn { get; set; }
     }
 }

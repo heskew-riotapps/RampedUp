@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthService\AppUserManager.cs" />
+    <Compile Include="AuthService\AuthManager.cs" />
     <Compile Include="AuthService\Models\AppUserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

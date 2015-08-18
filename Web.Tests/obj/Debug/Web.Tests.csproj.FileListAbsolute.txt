@@ -1,0 +1,1 @@
+C:\Users\Hunter\Documents\GitHub\RampedUp\Web.Tests\obj\Debug\Web.Tests.csprojResolveAssemblyReference.cache

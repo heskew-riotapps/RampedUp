@@ -1,0 +1,5 @@
+C:\Users\Hunter\Documents\GitHub\RampedUp\Themes\bin\Debug\Themes.dll
+C:\Users\Hunter\Documents\GitHub\RampedUp\Themes\bin\Debug\Themes.pdb
+C:\Users\Hunter\Documents\GitHub\RampedUp\Themes\obj\Debug\Themes.csprojResolveAssemblyReference.cache
+C:\Users\Hunter\Documents\GitHub\RampedUp\Themes\obj\Debug\Themes.dll
+C:\Users\Hunter\Documents\GitHub\RampedUp\Themes\obj\Debug\Themes.pdb

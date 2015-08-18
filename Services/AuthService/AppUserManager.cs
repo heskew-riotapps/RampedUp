@@ -38,7 +38,7 @@ namespace RampedUp.Services.AuthService
         {
             // var authContext = new AuthContext();
             var manager = new AppUserManager(new UserStore<AppUser>(context.Get<AuthContext>()));
-      
+
 
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
@@ -46,45 +46,6 @@ namespace RampedUp.Services.AuthService
                 manager.UserTokenProvider = new DataProtectorTokenProvider<AppUser>(dataProtectionProvider.Create("PasswordReset"));
             }
             return manager;
-        }
-
-        public async Task<AppUser> RegisterUserAsync(AppUserModel userModel)
-        {
-            AppUser newUser = null;
-            AppUser user = new AppUser
-            {
-                UserName = userModel.UserName.Trim(),
-                FirstName = userModel.FirstName.Trim(),
-                LastName = userModel.LastName.Trim(),
-                Email = userModel.UserName.Trim(),
-                CreatedOn = DateTime.UtcNow,
-                UpdatedOn = DateTime.UtcNow,
-                PhoneNumber = userModel.PhoneNumber,
-                StatusId = AppUser.eStatus.PendingActivation,
-                TermsAcceptedOn = DateTime.UtcNow
-            };
-
-            //save account first, 
-      
-
-            var result = await this.CreateAsync(user, userModel.Password);
-
-            //add user to default role
-            if (result.Succeeded)
-            {
-                //newUser = await this.FindUser(user.UserName, userModel.Password);
-
-                //result = await this.AssignUserToRole(newUser.Id, Social123.AuthService.Plumbing.Constants.CustomerRole);
-
-                //account.CreatedBy = new Guid(newUser.Id);
-                //account.UpdatedBy = new Guid(newUser.Id);
-                //subscription.CreatedBy = new Guid(newUser.Id);
-                //subscription.UpdatedBy = new Guid(newUser.Id);
-
-                //await this._adminCtx.SaveChangesAsync();
-            }
-
-            return newUser;
         }
  
     }
