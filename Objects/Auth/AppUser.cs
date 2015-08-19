@@ -17,8 +17,7 @@ namespace RampedUp.Objects.Auth
             PendingActivation = 0,
             Active = 1,
             Inactive = 2,
-            Deleted = 3,
-            Imported = 4
+            Deleted = 3
         }
 
         public DateTime? TermsAcceptedOn { get; set; }

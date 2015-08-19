@@ -90,9 +90,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthService\AppUserManager.cs" />
-    <Compile Include="AuthService\AuthManager.cs" />
+    <Compile Include="AuthService\IdentityManager.cs" />
+    <Compile Include="AuthService\UserManager.cs" />
     <Compile Include="AuthService\Models\AppUserModel.cs" />
+    <Compile Include="Ioc\IocConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

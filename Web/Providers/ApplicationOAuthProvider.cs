@@ -14,23 +14,24 @@ using RampedUp.Objects.Auth;
 using log4net;
 using System.Net;
 using System.Web;
+ 
 
-namespace Web.Providers
+namespace RampedUp.Web.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
         private static readonly ILog logger = LogManager.GetLogger(typeof(ApplicationOAuthProvider));
         private readonly string _publicClientId;
 
-        public ApplicationOAuthProvider(string publicClientId)
-        {
-            if (publicClientId == null)
-            {
-                throw new ArgumentNullException("publicClientId");
-            }
+        //public ApplicationOAuthProvider(string publicClientId)
+        //{
+        //    if (publicClientId == null)
+        //    {
+        //        throw new ArgumentNullException("publicClientId");
+        //    }
 
-            _publicClientId = publicClientId;
-        }
+        //    _publicClientId = publicClientId;
+        //}
 
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
@@ -41,67 +42,61 @@ namespace Web.Providers
             AppUser user = null;
             var role = string.Empty;
 
-            using (AppUserManager _mgr = new AppUserManager(HttpContext.Current.GetOwinContext().GetUserManager<RampedUp.Objects.Auth.AppUser>()))
+            using (UserManager _mgr = new UserManager(HttpContext.Current.GetOwinContext().GetUserManager<RampedUp.Services.AuthService.IdentityManager>()))
             {
-                user = await _repo.FindUser(context.UserName, context.Password);
-                if (user != null && user.Roles != null && user.Roles.Count > 0)
-                {
-                    role = _repo.GetRole(user.Roles.First().RoleId).Name;
-                }
+                user = await _mgr.FindUserAsync(context.UserName, context.Password);
+                //if (user != null && user.Roles != null && user.Roles.Count > 0)
+                //{
+                //    role = _repo.GetRole(user.Roles.First().RoleId).Name;
+                //}
 
             }
             if (user == null)
             {
-                context.SetError("invalid_grant", Social123.Resources.Strings.Exceptions.LoginFailed);
+                context.SetError("invalid_grant", "login failed"); //RampedUp.Resources.Strings.Exceptions.LoginFailed);
                 return;
             }
-            if (user.StatusId == ApplicationUser.eStatus.PendingActivation)
+            if (user.StatusId == AppUser.eStatus.PendingActivation)
             {
-                var _accountMgr = new Social123.Services.AccountService.AccountManager();
-                if (_accountMgr.IsAccountEloquaEnabled(user.AccountId ?? Guid.Empty))
-                {
-                    context.SetError("invalid_grant", Social123.Resources.Strings.Exceptions.LoginUserNotActiveEloqua);
-                }
-                else
-                {
-                    context.SetError("invalid_grant", Social123.Resources.Strings.Exceptions.LoginUserNotActive);
-                }
+
+                context.SetError("invalid_grant", "not active"); //RampedUp.Resources.Strings.Exceptions.LoginUserNotActive);
+                 
                 return;
             }
-            if (user.StatusId != ApplicationUser.eStatus.Active)
+            if (user.StatusId != AppUser.eStatus.Active)
             {
-                context.SetError("invalid_grant", Social123.Resources.Strings.Exceptions.LoginUserNotActive);
+                context.SetError("invalid_grant", "not active"); // RampedUp.Resources.Strings.Exceptions.LoginUserNotActive);
                 return;
             }
 
-            if (user.AccountId != null) // this can be refactored after all users have account id
-            {
-                Account account = null;
-                using (var _accountMgr = new AccountManager(System.Configuration.ConfigurationManager.ConnectionStrings["S123Admin"].ConnectionString))
-                {
-                    account = await _accountMgr.GetAccount((Guid)user.AccountId);
-                }
+            //if (user.AccountId != null) // this can be refactored after all users have account id
+            //{
+            //    Account account = null;
+            //    using (var _accountMgr = new AccountManager(System.Configuration.ConfigurationManager.ConnectionStrings["S123Admin"].ConnectionString))
+            //    {
+            //        account = await _accountMgr.GetAccount((Guid)user.AccountId);
+            //    }
 
-                if (account != null && (account.StatusId == AccountEnums.eAccountStatus.Deleted || account.StatusId == AccountEnums.eAccountStatus.Suspended))
-                {
-                    context.SetError("invalid_grant", Social123.Resources.Strings.Exceptions.LoginAccountNotActive);
-                    return;
-                }
-                else
-                {
-                    //for now, if account is in trial status, simply set all of the account's user to trial status (only in httpcontext/identity)
-                    if (account.StatusId == AccountEnums.eAccountStatus.Trial)
-                    {
-                        role = Social123.AuthService.Plumbing.Constants.TrialRole;
-                    }
-                }
-            }
+            //    if (account != null && (account.StatusId == AccountEnums.eAccountStatus.Deleted || account.StatusId == AccountEnums.eAccountStatus.Suspended))
+            //    {
+            //        context.SetError("invalid_grant", RampedUp.Resources.Strings.Exceptions.LoginAccountNotActive);
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        //for now, if account is in trial status, simply set all of the account's user to trial status (only in httpcontext/identity)
+            //        if (account.StatusId == AccountEnums.eAccountStatus.Trial)
+            //        {
+            //            role = RampedUp.AuthService.Plumbing.Constants.TrialRole;
+            //        }
+            //    }
+            //}
 
 
             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
             // identity.AddClaim(new Claim("sub", context.UserName));
             //identity.AddClaim(new Claim("_u", user.FirstName + " " + user.LastName ));
-            identity.AddClaim(new Claim(ClaimTypes.Role, role));
+           // identity.AddClaim(new Claim(ClaimTypes.Role, role));
             identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id));
             identity.AddClaim(new Claim(ClaimTypes.Name, user.FirstName));
             // identity.AddClaim(new Claim(ClaimTypes., user.FirstName));

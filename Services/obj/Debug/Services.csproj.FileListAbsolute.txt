@@ -36,3 +36,5 @@ C:\Users\Hunter\Documents\GitHub\RampedUp\Services\bin\Debug\RazorEngine.xml
 C:\Users\Hunter\Documents\GitHub\RampedUp\Services\bin\Debug\System.Web.Razor.xml
 C:\Users\Hunter\Documents\GitHub\RampedUp\Services\obj\Debug\RampedUp.Services.dll
 C:\Users\Hunter\Documents\GitHub\RampedUp\Services\obj\Debug\RampedUp.Services.pdb
+C:\Users\Hunter\Documents\GitHub\RampedUp\Services\bin\Debug\Autofac.dll
+C:\Users\Hunter\Documents\GitHub\RampedUp\Services\bin\Debug\Autofac.xml

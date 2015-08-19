@@ -4,9 +4,9 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(Web.Startup))]
+[assembly: OwinStartup(typeof(RampedUp.Web.Startup))]
 
-namespace Web
+namespace RampedUp.Web
 {
     public partial class Startup
     {
@@ -14,5 +14,6 @@ namespace Web
         {
             ConfigureAuth(app);
         }
+
     }
 }
