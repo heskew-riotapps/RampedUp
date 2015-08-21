@@ -27,38 +27,19 @@ angular.module('app')
             url: '/app',
             views: {
               '': {
-                templateUrl: 'views/layout.html'
+                  templateUrl: 'api/views/a/home/layout'
               },
               'aside': {
-                templateUrl: 'views/partials/aside.nav.uikit.html'
+                  templateUrl: 'api/views/a/home/asidenavuikit'
               }
             }
           })
             .state('app.dashboard', {
               url: '/dashboard',
-              templateUrl: 'views/pages/dashboard.html',
-              resolve: {
-                deps: ['$ocLazyLoad',
-                  function( $ocLazyLoad ){
-                    return $ocLazyLoad.load(['scripts/controllers/chart.js','scripts/controllers/vectormap.js']);
-                }]
-              }
+              templateUrl: 'api/views/a/home/dashboard'
+             
             })
-          .state('mail', {
-            url: '/mail',
-            views: {
-              '': {
-                templateUrl: 'views/layout.html'
-              },
-              'aside': {
-                templateUrl: 'views/partials/aside.nav.mail.html'
-              }
-            }
-          })
-            .state('mail.inbox', {
-              url: '/inbox',
-              templateUrl: 'views/pages/mail.html'
-            })
+
       }
     ]
   );
