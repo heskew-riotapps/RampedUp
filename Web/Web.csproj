@@ -544,6 +544,7 @@
     <Content Include="Views\Unauthorized\Home\Header.cshtml" />
     <Content Include="Views\Authorized\Nav\Aside.cshtml" />
     <Content Include="Views\Unauthorized\Home\Footer.cshtml" />
+    <Content Include="Views\Authorized\Nav\AsideTpl.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Objects\Objects.csproj">
