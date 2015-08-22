@@ -545,6 +545,9 @@
     <Content Include="Views\Authorized\Nav\Aside.cshtml" />
     <Content Include="Views\Unauthorized\Home\Footer.cshtml" />
     <Content Include="Views\Authorized\Nav\AsideTpl.cshtml" />
+    <Content Include="Views\Authorized\App\Kickstarter.cshtml" />
+    <Content Include="Views\Authorized\App\GamePlan.cshtml" />
+    <Content Include="Views\Authorized\App\WinVault.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Objects\Objects.csproj">
