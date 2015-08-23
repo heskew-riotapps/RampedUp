@@ -13,24 +13,30 @@ namespace RampedUp.Web
             const string cssRoot = "~/Client/css/";
 
             bundles.Add(new ScriptBundle("~/bundles/app")
+               .Include(
+                   appRoot + "app.js"
+                )
+                .IncludeDirectory(
+                   appRoot + "config", "*.js", true
+                )
+                .IncludeDirectory(
+                   appRoot + "directives", "*.js", true
+                )
+                .IncludeDirectory(
+                   appRoot + "services", "*.js", true
+                )
+                .IncludeDirectory(
+                   appRoot + "filters", "*.js", true
+                )
+                .IncludeDirectory(
+                   appRoot + "resources", "*.js", true
+                )
+                .IncludeDirectory(
+                   appRoot + "controllers/app", "*.js", true
+                )
                 .Include(
-                    appRoot + "app.js",
-                    appRoot + "config/config.router.js",
-                    appRoot + "config/config.router.ui.js",
-                    appRoot + "config/config.router.pages.js",
-                    appRoot + "config/config.lazyload.js",
-                    appRoot + "directives/fromTheme/lazyload.js",
-                    appRoot + "directives/fromTheme/ui-jp.js",
-                    appRoot + "directives/fromTheme/ui-nav.js",
-                    appRoot + "directives/fromTheme/ui-fullscreen.js",
-                    appRoot + "directives/fromTheme/ui-scroll.js",
-                    appRoot + "directives/fromTheme/ui-load.js",
-                    appRoot + "directives/fromTheme/ui-nav.js",
                     appRoot + "main.js"
-                 )
-                 .IncludeDirectory(
-                    appRoot + "controllers/app", "*.js", true)
-                 );
+                ));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery")
                 .Include(vendorRoot + "jquery/jquery.js"));
@@ -53,38 +59,21 @@ namespace RampedUp.Web
                     vendorRoot + "angular-translate-loader-static-files/angular-translate-loader-static-files.js",
                     vendorRoot + "angular-translate-storage-cookie/angular-translate-storage-cookie.js",
                     vendorRoot + "angular-translate-storage-local/angular-translate-storage-local.js",
-                    vendorRoot + "angular-loading-bar/build/loading-bar.js"
+                    vendorRoot + "angular-loading-bar/loading-bar.js"
                 ));
 
-               bundles.Add(new StyleBundle("~/bundles/css")
-                   .Include(
-                        cssRoot + "animate/animate.css",
-                        cssRoot + "bootstrap/bootstrap.css",
-                        cssRoot + "bootstrap-additions/bootstrap-additions.css",
-                        cssRoot + "angular-motion/angular-motion.css",
-                        cssRoot + "font-awesome/font-awesome.css",
-                        cssRoot + "angular-loading-bar/loading-bar.css",
-                        cssRoot + "themify-icons.css",
-                        cssRoot + "font.css",
-                        cssRoot + "app.css"
-                    ));
-                 
-
-            //bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-            //            "~/Scripts/jquery-{version}.js"));
-
-            //// Use the development version of Modernizr to develop with and learn from. Then, when you're
-            //// ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-            //bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-            //            "~/Scripts/modernizr-*"));
-
-            //bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-            //          "~/Scripts/bootstrap.js",
-            //          "~/Scripts/respond.js"));
-
-            //bundles.Add(new StyleBundle("~/Content/css").Include(
-            //          "~/Content/bootstrap.css",
-            //          "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/bundles/css")
+                .Include(
+                     cssRoot + "animate/animate.css",
+                     cssRoot + "bootstrap/bootstrap.css",
+                     cssRoot + "bootstrap-additions/bootstrap-additions.css",
+                     cssRoot + "angular-motion/angular-motion.css",
+                     cssRoot + "font-awesome/font-awesome.css",
+                     cssRoot + "angular-loading-bar/loading-bar.css",
+                     cssRoot + "themify-icons.css",
+                     cssRoot + "font.css",
+                     cssRoot + "app.css"
+                 ));
         }
     }
 }

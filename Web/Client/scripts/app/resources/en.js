@@ -1,12 +1,10 @@
-{
-
-"header" : {
-  "navbar" : {
-    "DASHBOARD" : "Dashboard",
-    "EMAIL" : "Email",
-    "UIKITS" : "UI Kits",
-    "PAGES" : "Pages"
-  }
-}
-
+var enTranslations = {
+    "Header": {
+        "AppName": "RampedUp.io",
+        "NavBar": {
+            "Kickstarter": "Kickstarter",
+            "GamePlan": "Game Plan",
+            "WinVault": "Win Vault"
+        }
+    }
 }

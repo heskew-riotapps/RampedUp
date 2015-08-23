@@ -9,56 +9,53 @@
  */
 angular.module('app')
   .run(
-    [           '$rootScope', '$state', '$stateParams',
-      function ( $rootScope,   $state,   $stateParams ) {
-        $rootScope.$state = $state;
-        $rootScope.$stateParams = $stateParams;
+    ['$rootScope', '$state', '$stateParams',
+      function ($rootScope, $state, $stateParams) {
+          $rootScope.$state = $state;
+          $rootScope.$stateParams = $stateParams;
       }
     ]
   )
   .config(
-    [          '$stateProvider', '$urlRouterProvider',
-      function ( $stateProvider,   $urlRouterProvider ) {
-        $urlRouterProvider
-          .otherwise('/app/dashboard');
-        $stateProvider
-          .state('app', {
-            abstract: true,
-            url: '/app',
-            views: {
-              '': {
-                templateUrl: 'views/layout.html'
-              },
-              'aside': {
-                templateUrl: 'views/partials/aside.nav.uikit.html'
-              }
-            }
-          })
-            .state('app.dashboard', {
-              url: '/dashboard',
-              templateUrl: 'views/pages/dashboard.html',
-              resolve: {
-                deps: ['$ocLazyLoad',
-                  function( $ocLazyLoad ){
-                    return $ocLazyLoad.load(['scripts/controllers/chart.js','scripts/controllers/vectormap.js']);
-                }]
-              }
+    ['$stateProvider', '$urlRouterProvider',
+      function ($stateProvider, $urlRouterProvider) {
+          $urlRouterProvider
+            .otherwise('/app/dashboard');
+          $stateProvider
+            .state('app', {
+                abstract: true,
+                url: '/app',
+                views: {
+                    '': {
+                        templateUrl: 'api/views/a/home/layout'
+                    },
+                    'aside': {
+                        templateUrl: 'api/views/a/home/asidenavuikit'
+                    }
+                }
             })
-          .state('mail', {
-            url: '/mail',
-            views: {
-              '': {
-                templateUrl: 'views/layout.html'
-              },
-              'aside': {
-                templateUrl: 'views/partials/aside.nav.mail.html'
-              }
-            }
+              .state('app.dashboard', {
+                  url: '/dashboard',
+                  templateUrl: 'api/views/a/home/dashboard'
+                  
+              })
+          .state('main.kickstarter', {
+              url: '/kickstarter',
+              templateUrl: 'api/views/a/app/kickstarter'
+
           })
-            .state('mail.inbox', {
-              url: '/inbox',
-              templateUrl: 'views/pages/mail.html'
+            .state('main.gameplan', {
+                url: '/gameplan',
+                templateUrl: 'api/views/a/app/gameplan'
+
             })
+            .state('main.winvault', {
+                url: '/winvault',
+                templateUrl: 'api/views/a/app/winvault'
+
+            })
+
+
       }
     ]
   );
