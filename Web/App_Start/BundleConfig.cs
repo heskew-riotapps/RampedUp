@@ -12,25 +12,49 @@ namespace RampedUp.Web
             const string vendorRoot = "~/Client/scripts/vendors/";
             const string cssRoot = "~/Client/css/";
 
+            //bundles.Add(new ScriptBundle("~/bundles/app")
+            //    .Include(
+            //        appRoot + "app.js",
+            //        appRoot + "config/config.router.js",
+            //        appRoot + "config/config.router.ui.js",
+            //        appRoot + "config/config.router.pages.js",
+            //        appRoot + "config/config.lazyload.js",
+            //        appRoot + "directives/fromTheme/lazyload.js",
+            //        appRoot + "directives/fromTheme/ui-jp.js",
+            //        appRoot + "directives/fromTheme/ui-nav.js",
+            //        appRoot + "directives/fromTheme/ui-fullscreen.js",
+            //        appRoot + "directives/fromTheme/ui-scroll.js",
+            //        appRoot + "services/ui-load.js",
+            //        appRoot + "main.js"
+            //     )
+            //     .IncludeDirectory(
+            //        appRoot + "controllers/app", "*.js", true)
+            //     );
             bundles.Add(new ScriptBundle("~/bundles/app")
                 .Include(
-                    appRoot + "app.js",
-                    appRoot + "config/config.router.js",
-                    appRoot + "config/config.router.ui.js",
-                    appRoot + "config/config.router.pages.js",
-                    appRoot + "config/config.lazyload.js",
-                    appRoot + "directives/fromTheme/lazyload.js",
-                    appRoot + "directives/fromTheme/ui-jp.js",
-                    appRoot + "directives/fromTheme/ui-nav.js",
-                    appRoot + "directives/fromTheme/ui-fullscreen.js",
-                    appRoot + "directives/fromTheme/ui-scroll.js",
-                    appRoot + "directives/fromTheme/ui-load.js",
-                    appRoot + "directives/fromTheme/ui-nav.js",
-                    appRoot + "main.js"
+                    appRoot + "app.js"
                  )
                  .IncludeDirectory(
-                    appRoot + "controllers/app", "*.js", true)
-                 );
+                    appRoot + "config", "*.js", true
+                 )
+                 .IncludeDirectory(
+                    appRoot + "directives", "*.js", true
+                 )
+                 .IncludeDirectory(
+                    appRoot + "services", "*.js", true
+                 )
+                 .IncludeDirectory(
+                    appRoot + "filters", "*.js", true
+                 )
+                 .IncludeDirectory(
+                    appRoot + "resources", "*.js", true
+                 )
+                 .IncludeDirectory(
+                    appRoot + "controllers/app", "*.js", true
+                 )
+                 .Include(
+                     appRoot + "main.js"
+                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery")
                 .Include(vendorRoot + "jquery/jquery.js"));
@@ -53,7 +77,7 @@ namespace RampedUp.Web
                     vendorRoot + "angular-translate-loader-static-files/angular-translate-loader-static-files.js",
                     vendorRoot + "angular-translate-storage-cookie/angular-translate-storage-cookie.js",
                     vendorRoot + "angular-translate-storage-local/angular-translate-storage-local.js",
-                    vendorRoot + "angular-loading-bar/build/loading-bar.js"
+                    vendorRoot + "angular-loading-bar/loading-bar.js"
                 ));
 
                bundles.Add(new StyleBundle("~/bundles/css")

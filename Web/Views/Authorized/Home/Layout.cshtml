@@ -1,0 +1,17 @@
+﻿@{
+    Layout = null;
+}
+
+  <!-- header -->
+<header id="header" ng-include=" 'api/views/u/home/header' " class="app-header navbar {{app.settings.headerColor}}" role="menu"></header>
+<!-- / header -->
+<!-- aside -->
+<aside id="aside" class="app-aside hidden-xs {{app.settings.asideColor}}" ng-class="{'show animated fadeInLeft' : app.asideCollapse}" ng-include="'api/views/a/nav/aside'"></aside>
+<!-- / aside -->
+<!-- content -->
+<div id="content" class="app-content" role="main" ui-view>
+</div>
+<!-- / content -->
+<!-- footer -->
+<footer id="footer" class="app-footer" role="footer" ng-include="'api/views/u/home/footer'"></footer>
+<!-- / footer -->
