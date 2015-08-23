@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use strict';
 var enTranslations = {
     "Header": {
@@ -8,4 +9,17 @@ var enTranslations = {
             "WinVault": "Win Vault"
         }
     }
+=======
+{
+
+"header" : {
+  "navbar" : {
+    "DASHBOARD" : "Dashboard",
+    "EMAIL" : "Email",
+    "UIKITS" : "UI Kits",
+    "PAGES" : "Pages"
+  }
+}
+
+>>>>>>> parent of f589cfb... setup
 }

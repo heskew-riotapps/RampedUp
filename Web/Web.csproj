@@ -538,13 +538,6 @@
     <Content Include="Client\less\variables.less" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Authorized\Home\Dashboard.cshtml" />
-    <Content Include="Views\Authorized\Home\Layout.cshtml" />
-    <Content Include="Views\Authorized\Home\AsideNavUIKit.cshtml" />
-    <Content Include="Views\Unauthorized\Home\Header.cshtml" />
-    <Content Include="Views\Authorized\Nav\Aside.cshtml" />
-    <Content Include="Views\Unauthorized\Home\Footer.cshtml" />
-    <Content Include="Views\Authorized\Nav\AsideTpl.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Objects\Objects.csproj">
