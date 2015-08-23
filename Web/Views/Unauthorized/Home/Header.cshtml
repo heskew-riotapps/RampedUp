@@ -19,7 +19,7 @@
         <i class="pull-right ti-arrow-circle-down text-sm m-v-xs m-l-xs"></i>
         <i class="glyphicon glyphicon-th-large text-md"></i>
         <img src="images/logo.png" alt="." class="hide">
-        <span class="hidden-folded m-l-xs" translate>Header.AppName</span>
+        <span class="hidden-folded m-l-xs">{{app.name}}<sup class="text-xs font-thin">{{app.version}}</sup></span>
     </a>
     <!-- / brand -->
 </div>
@@ -29,21 +29,27 @@
     <!-- nav -->
     <ul class="nav navbar-nav navbar-left">
         <li>
-            <a ui-sref="app.kickstarter">
-                <i class="fa fa-fw fa-check-square-o"></i>
-                <span translate>Header.NavBar.Kickstarter</span>
+            <a ui-sref="app.dashboard">
+                <i class="fa fa-fw fa-pie-chart"></i>
+                <span translate="header.navbar.DASHBOARD">Dashboard</span>
             </a>
         </li>
         <li>
-            <a ui-sref="app.gameplan">
-                <i class="fa fa-fw fa-tachometer"></i>
-                <span translate>Header.NavBar.GamePlan</span>
+            <a ui-sref="mail.inbox">
+                <i class="fa fa-fw fa-envelope"></i>
+                <span translate="header.navbar.EMAIL">Email</span>
             </a>
         </li>
         <li>
             <a ui-sref="ui.component.arrow">
-                <i class="fa fa-fw fa-thumbs-o-up"></i>
-                <span translate>Header.NavBar.WinVault</span>
+                <i class="fa fa-fw fa-suitcase"></i>
+                <span translate="header.navbar.UIKITS">UI Kits</span>
+            </a>
+        </li>
+        <li>
+            <a ui-sref="page.profile">
+                <i class="fa fa-fw fa-file"></i>
+                <span translate="header.navbar.PAGES">Pages</span>
             </a>
         </li>
     </ul>
