@@ -1,11 +1,12 @@
-'use strict';
-var enTranslations = {
-    "header": {
-        "navbar": {
-            "DASHBOARD": "Dashboard",
-            "EMAIL": "Email",
-            "UIKITS": "UI Kits",
-            "PAGES": "Pages"
-        }
-    }
+{
+
+"header" : {
+  "navbar" : {
+    "DASHBOARD" : "Dashboard",
+    "EMAIL" : "Email",
+    "UIKITS" : "UI Kits",
+    "PAGES" : "Pages"
+  }
+}
+
 }
