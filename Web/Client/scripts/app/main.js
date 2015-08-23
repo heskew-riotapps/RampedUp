@@ -10,14 +10,13 @@
 angular.module('app')  
   .controller('MainCtrl', ['$scope', '$translate', '$localStorage', '$window', 
     function (              $scope,   $translate,   $localStorage,   $window ) {
-      // add 'ie' classes to html
+        // add 'ie' classes to html
+        debugger;
       var isIE = !!navigator.userAgent.match(/MSIE/i) || !!navigator.userAgent.match(/Trident.*rv:11\./);
       isIE && angular.element($window.document.body).addClass('ie');
       isSmartDevice( $window ) && angular.element($window.document.body).addClass('smart');
       // config
       $scope.app = {
-        name: 'HeyMetro',
-        version: '1.3',
         // for chart colors
         color: {
           primary: '#155abb',
@@ -90,14 +89,14 @@ angular.module('app')
       $scope.$watch('app.settings', function(){ $localStorage.appSettings = $scope.app.settings; }, true);
 
       // angular translate
-      $scope.langs = {en:'English', zh_CN:'中文'};
-      $scope.selectLang = $scope.langs[$translate.proposedLanguage()] || "English";
-      $scope.setLang = function(langKey) {
-        // set the current lang
-        $scope.selectLang = $scope.langs[langKey];
-        // You can change the language during runtime
-        $translate.use(langKey);
-      };
+      ////$scope.langs = {en:'English', zh_CN:'中文'};
+      ////$scope.selectLang = $scope.langs[$translate.proposedLanguage()] || "English";
+      ////$scope.setLang = function(langKey) {
+      ////  // set the current lang
+      ////  $scope.selectLang = $scope.langs[langKey];
+      ////  // You can change the language during runtime
+      ////  $translate.use(langKey);
+      ////};
 
       function isSmartDevice( $window ) {
         // Adapted from http://www.detectmobilebrowsers.com
