@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 'use strict';
 var enTranslations = {
     "Header": {
@@ -10,6 +11,8 @@ var enTranslations = {
         }
     }
 =======
+=======
+>>>>>>> parent of f589cfb... setup
 {
 
 "header" : {
@@ -21,5 +24,8 @@ var enTranslations = {
   }
 }
 
+<<<<<<< HEAD
+>>>>>>> parent of f589cfb... setup
+=======
 >>>>>>> parent of f589cfb... setup
 }
