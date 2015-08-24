@@ -300,6 +300,10 @@
     <Content Include="Client\scripts\app\config\config.router.js" />
     <Content Include="Client\scripts\app\config\config.router.pages.js" />
     <Content Include="Client\scripts\app\config\config.router.ui.js" />
+    <Content Include="Client\scripts\app\controllers\app\gamePlan\gamePlanController.js" />
+    <Content Include="Client\scripts\app\controllers\app\kickstarter\kickstarterController.js" />
+    <Content Include="Client\scripts\app\controllers\app\wins\addOpportunityController.js" />
+    <Content Include="Client\scripts\app\controllers\app\wins\winVaultController.js" />
     <Content Include="Client\scripts\app\controllers\fromTheme\angular-strap.js" />
     <Content Include="Client\scripts\app\controllers\fromTheme\chart.js" />
     <Content Include="Client\scripts\app\controllers\fromTheme\editor.js" />
@@ -467,7 +471,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Client\images\" />
-    <Folder Include="Client\scripts\app\controllers\app\" />
+    <Folder Include="Client\scripts\app\controllers\app\admin\" />
+    <Folder Include="Client\scripts\app\controllers\app\auth\" />
     <Folder Include="Client\scripts\app\filters\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -548,6 +553,10 @@
     <Content Include="Views\Authorized\Nav\AsideTpl.cshtml" />
     <Content Include="Views\Unauthorized\Home\Footer.cshtml" />
     <Content Include="Views\Unauthorized\Home\Header.cshtml" />
+    <Content Include="Views\Authorized\Samples\Streamline.cshtml" />
+    <Content Include="Views\Authorized\Samples\Kickstarter.cshtml" />
+    <Content Include="Views\Authorized\Samples\GamePlan.cshtml" />
+    <Content Include="Views\Authorized\Samples\WinVault.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Objects\Objects.csproj">

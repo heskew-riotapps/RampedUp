@@ -20,7 +20,7 @@ angular.module('app')
     ['$stateProvider', '$urlRouterProvider',
       function ($stateProvider, $urlRouterProvider) {
           $urlRouterProvider
-            .otherwise('/app/dashboard');
+            .otherwise('/app/home');
           $stateProvider
             .state('app', {
                 abstract: true,
@@ -32,28 +32,42 @@ angular.module('app')
                     'aside': {
                         templateUrl: 'api/views/a/home/asidenavuikit'
                     }
+                    //'kickstarter': {
+                    //    templateUrl: 'api/views/a/samples/kickstarter'
+                    //}
                 }
             })
-              .state('app.dashboard', {
-                  url: '/dashboard',
-                  templateUrl: 'api/views/a/home/dashboard'
-                  
+              .state('app.home', {
+                  url: '/home',
+                  templateUrl: 'api/views/a/samples/streamline'
+
               })
-          .state('main.kickstarter', {
-              url: '/kickstarter',
-              templateUrl: 'api/views/a/app/kickstarter'
 
+         .state('app.kickstarter', {
+             url: '/sample/kickstarter',
+             templateUrl: 'api/views/a/samples/kickstarter',
+             controller: 'kickstarterController'
+         })
+          .state('app.gameplan', {
+              url: '/sample/gameplan',
+              templateUrl: 'api/views/a/samples/gameplan',
+              controller: 'gamePlanController'
           })
-            .state('main.gameplan', {
-                url: '/gameplan',
-                templateUrl: 'api/views/a/app/gameplan'
+          .state('app.winvault', {
+              url: '/sample/winvault',
+              templateUrl: 'api/views/a/samples/winvault',
+              controller: 'winVaultController'
+          })
+            ////.state('main.gameplan', {
+            ////    url: '/gameplan',
+            ////    templateUrl: 'api/views/a/app/gameplan'
 
-            })
-            .state('main.winvault', {
-                url: '/winvault',
-                templateUrl: 'api/views/a/app/winvault'
+            ////})
+            ////.state('main.winvault', {
+            ////    url: '/winvault',
+            ////    templateUrl: 'api/views/a/app/winvault'
 
-            })
+            ////})
 
 
       }

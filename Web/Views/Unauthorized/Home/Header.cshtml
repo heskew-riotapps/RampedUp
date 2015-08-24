@@ -10,12 +10,19 @@
         <i class="ti-menu"></i>
     </button>
     <!-- brand -->
-    <a class="navbar-brand text-lt"
+    @*<a class="navbar-brand text-lt"
        bs-aside="aside"
        data-template="api/views/a/nav/asidetpl"
        data-placement="top"
        data-animation="am-slide-top aside-open-backdrop"
        data-container="body">
+        <i class="pull-right ti-arrow-circle-down text-sm m-v-xs m-l-xs"></i>
+        <i class="glyphicon glyphicon-th-large text-md"></i>
+        <img src="images/logo.png" alt="." class="hide">
+        <span class="hidden-folded m-l-xs" translate>Header.AppName</span>
+    </a>*@
+    <a class="navbar-brand text-lt"
+       bs-aside="aside">
         <i class="pull-right ti-arrow-circle-down text-sm m-v-xs m-l-xs"></i>
         <i class="glyphicon glyphicon-th-large text-md"></i>
         <img src="images/logo.png" alt="." class="hide">
@@ -29,19 +36,19 @@
     <!-- nav -->
     <ul class="nav navbar-nav navbar-left">
         <li>
-            <a ui-sref="main.kickstarter">
+            <a ui-sref="app.kickstarter">
                 <i class="fa fa-fw fa-check-square-o"></i>
                 <span translate>Header.NavBar.Kickstarter</span>
             </a>
         </li>
         <li>
-            <a ui-sref="main.gameplan">
+            <a ui-sref="app.gameplan">
                 <i class="fa fa-fw fa-list"></i>
                 <span translate>Header.NavBar.GamePlan</span>
             </a>
         </li>
         <li>
-            <a ui-sref="main.winvault">
+            <a ui-sref="app.winvault">
                 <i class="fa fa-fw fa-thumbs-o-up"></i>
                 <span translate>Header.NavBar.WinVault</span>
             </a>
@@ -50,7 +57,7 @@
     <!-- / nav -->
     <!-- nabar right -->
     <ul class="nav navbar-nav navbar-right m-r-n">
-        <li>
+        @*<li>
             <script type="text/ng-template" id="settings">
                 <div tabindex="-1" class="p dropdown-menu bg-white bg-inherit no-b-t no-margin w-sm" role="menu">
                     <p class="clearfix">
@@ -84,8 +91,8 @@
                 <i class="glyphicon glyphicon-cog"></i>
                 <span class="visible-xs-inline">Settings</span>
             </a>
-        </li>
-        <li>
+        </li>*@
+        @*<li>
             <a href
                bs-aside="aside"
                data-template="views/partials/aside.tpl.chat.html"
@@ -96,7 +103,7 @@
                 <b class="badge badge-xs bg-warning up">3</b>
                 <span class="visible-xs-inline">Notifications</span>
             </a>
-        </li>
+        </li>*@
         <li class="hidden-xs hidden-sm">
             <a href ui-fullscreen><i class="glyphicon glyphicon-resize-vertical"></i></a>
         </li>

@@ -6,5 +6,16 @@ var enTranslations = {
             "GamePlan": "Game Plan",
             "WinVault": "Win Vault"
         }
+    },
+    "Views": {
+        "Kickstarter": {
+            "Title": "Kickstarter (Sample Only)"
+        },
+        "WinVault": {
+            "Title": "Win Vault (Sample Only)"
+        },
+        "GamePlan": {
+            "Title": "Game Plan (Sample Only)"
+        }
     }
 }

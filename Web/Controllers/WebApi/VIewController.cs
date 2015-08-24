@@ -61,16 +61,17 @@ namespace RampedUp.Web.Controllers.WebApi
             //try to find view in cache first
             //refactor this to cache/compile at startup
             string parsedView = string.Empty;
-            //#if DEBUG
+            #if DEBUG == false
             try
             {
+            //grab from cache if in production
                 parsedView = RazorEngine.Engine.Razor.Run(templateKey);
             }
             catch (InvalidOperationException e)
             {
                 //from here it will fall through to RunCompile
             }
-            //#endif
+            #endif
             if (string.IsNullOrEmpty(parsedView))
             {
                 var viewPath = System.Web.Hosting.HostingEnvironment.MapPath(string.Format(@"~/Views/{2}/{0}/{1}.cshtml", folder, file, (isAuthorized ? "Authorized" : "Unauthorized")));

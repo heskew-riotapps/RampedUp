@@ -30,11 +30,11 @@ angular.module('app')
           dark:    '#202a3a'
         },
         settings: {
-          headerColor: 'bg-primary',
+          headerColor: 'bg-inverse lt',
           headerFixed: true,
           headerShadow: true,
-          asideColor: 'bg-dark lt',
-          asideTop: false
+          asideColor: 'bg-info lt',
+          asideTop: true
         }
       }
 
