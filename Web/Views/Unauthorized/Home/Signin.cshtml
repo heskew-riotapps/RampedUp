@@ -1,0 +1,31 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="container">
+    <div class="center-block w-xl w-auto-xs m-b-lg">
+        <div class="text-2x m-v-lg text-primary"><i class="glyphicon glyphicon-th-large text-xl"></i><span translate>Header.AppName</span></div>
+        <div class="m-b text-sm" translate>
+            Views.Signin.Labels.Intro
+        </div>
+        <form name="form">
+            <div class="form-group m-b-xs">
+                <label class="hide" translate>Views.Signin.Labels.Email</label>
+                <input type="email" placeholder="{{emailPlaceholder}}" class="form-control" ng-model="user.email" required>
+            </div>
+            <div class="form-group m-b-xs">
+                <label class="hide" translate>Views.Signin.Labels.Password</label>
+                <input type="password" placeholder="{{passwordPlaceholder}}" class="form-control" ng-model="user.password" required>
+            </div>
+            @*<div class="checkbox no-margin">
+                <label class="ui-checks">
+                    <input type="checkbox"><i></i> Keep me signed in???
+                </label>
+            </div>*@
+            <button type="submit" class="btn btn-info p-h-md m-v-lg" translate>Views.Signin.Labels.SignIn</button>
+            <p class="text-xs"><a ui-sref="forgot-password" translate>Views.Signin.Labels.ForgotPassword</a></p>
+            <p class="m-v-lg text-sm"><span translate>Views.Signin.Labels.NoAccount</span> <a ui-sref="signup"><span translate>Views.Signin.Labels.CreateAccount</span></a></p>
+        </form>
+    </div>
+</div>
+<div class="app-footer" ng-include="'api/views/u/home/footer'"></div>

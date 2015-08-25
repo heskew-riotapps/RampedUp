@@ -188,11 +188,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Mvc\HomeController.cs" />
+    <Compile Include="Controllers\WebApi\AuthController.cs" />
     <Compile Include="Controllers\WebApi\UserController.cs" />
     <Compile Include="Controllers\WebApi\ViewController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Auth\AuthCheckModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Startup.cs" />
@@ -300,6 +302,7 @@
     <Content Include="Client\scripts\app\config\config.router.js" />
     <Content Include="Client\scripts\app\config\config.router.pages.js" />
     <Content Include="Client\scripts\app\config\config.router.ui.js" />
+    <Content Include="Client\scripts\app\controllers\app\auth\signinController.js" />
     <Content Include="Client\scripts\app\controllers\app\gamePlan\gamePlanController.js" />
     <Content Include="Client\scripts\app\controllers\app\kickstarter\kickstarterController.js" />
     <Content Include="Client\scripts\app\controllers\app\wins\addOpportunityController.js" />
@@ -323,6 +326,8 @@
     <Content Include="Client\scripts\app\directives\fromTheme\ui-scroll.js" />
     <Content Include="Client\scripts\app\main.js" />
     <Content Include="Client\scripts\app\resources\en.js" />
+    <Content Include="Client\scripts\app\services\authInterceptorService.js" />
+    <Content Include="Client\scripts\app\services\authService.js" />
     <Content Include="Client\scripts\app\services\ui-load.js" />
     <Content Include="Client\scripts\vendors\angular-animate\angular-animate.js" />
     <Content Include="Client\scripts\vendors\angular-bootstrap\ui-bootstrap-tpls.js" />
@@ -472,9 +477,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Client\images\" />
     <Folder Include="Client\scripts\app\controllers\app\admin\" />
-    <Folder Include="Client\scripts\app\controllers\app\auth\" />
     <Folder Include="Client\scripts\app\filters\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -557,6 +560,7 @@
     <Content Include="Views\Authorized\Samples\Kickstarter.cshtml" />
     <Content Include="Views\Authorized\Samples\GamePlan.cshtml" />
     <Content Include="Views\Authorized\Samples\WinVault.cshtml" />
+    <Content Include="Views\Unauthorized\Home\Signin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Objects\Objects.csproj">

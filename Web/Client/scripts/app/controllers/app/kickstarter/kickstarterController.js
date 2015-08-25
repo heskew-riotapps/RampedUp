@@ -1,7 +1,10 @@
 ﻿'use strict';
-app.controller('kickstarterController', ['$scope', '$rootScope', '$location', function ($scope, $rootScope, $location) {
+app.controller('kickstarterController', ['$scope', '$rootScope', '$location', 'authService',
+    function ($scope, $rootScope, $location, authService) {
 
-    //$rootScope.pageTitle = "Thank You";
+        authService.authorizationCheck("Admin,Developer,Internal").then(function (data) {
+            $scope.authorized = true;
+        });
  
 
 }]);

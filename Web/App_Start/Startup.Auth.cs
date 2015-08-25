@@ -21,6 +21,17 @@ namespace RampedUp.Web
 
         public void ConfigureAuth(IAppBuilder app)
         {
+            // Configure the db context and user manager to use a single instance per request
+            app.CreatePerOwinContext(RampedUp.Objects.Context.AuthContext.Create);
+            app.CreatePerOwinContext<RampedUp.Services.AuthService.IdentityManager>(RampedUp.Services.AuthService.IdentityManager.Create);
+
+
+            app.UseCookieAuthentication(new CookieAuthenticationOptions());
+            app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
+             
+        }
+        public void ConfigureOAuth(IAppBuilder app)
+        {
             // app.CreatePerOwinContext(Social123.AuthService.Plumbing.AuthContext.Create);
 
             OAuthAuthorizationServerOptions OAuthServerOptions = new OAuthAuthorizationServerOptions()

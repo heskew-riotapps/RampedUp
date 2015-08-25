@@ -43,10 +43,11 @@ angular.module('app')
             ////    url: '/document',
             ////    templateUrl: 'views/pages/document.html'
             ////})
-            ////.state('signin', {
-            ////    url: '/signin',
-            ////    templateUrl: 'views/pages/signin.html'
-            ////})
+            .state('signin', {
+                url: '/signin',
+                templateUrl: 'api/views/u/home/signin',
+                controller: 'signinController'
+            })
             ////.state('signup', {
             ////    url: '/signup',
             ////    templateUrl: 'views/pages/signup.html'
