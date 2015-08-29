@@ -7,6 +7,9 @@ var enTranslations = {
             "WinVault": "Win Vault"
         }
     },
+    "Buttons":{
+        "Save": "Save"
+    },
     "Views": {
         "Kickstarter": {
             "Title": "Kickstarter (Sample Only)"
@@ -19,6 +22,10 @@ var enTranslations = {
         },
         "Signin": {
             "Title": "Sign In",
+            "Buttons":{
+                "SignIn": "Log In",
+                "SigningIn": "Logging In"
+            },
             "Labels": {
                 "Intro": "Sign in with your RampedUp.io Account",
                 "Email": "Email",

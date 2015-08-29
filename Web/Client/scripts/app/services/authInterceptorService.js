@@ -18,7 +18,7 @@ app.factory('authInterceptorService', ['$q', '$location', '$localStorage', '$roo
     var _responseError = function (rejection) {
         debugger;
         if (rejection.status === 401 || rejection.status === 403) {
-        //    if ($location.path() != '/#/signin') { $rootScope.redirect = $location.path(); }
+            //    if ($location.path() != '/#/signin') { $rootScope.redirect = $location.path(); }
             if ($injector.get('$state').current.name != 'signin') {
                 $injector.get('$state').go('signin'); //vs transitionTo
             }

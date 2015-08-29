@@ -23,5 +23,6 @@ angular
     'oc.lazyLoad',
     'ui.load',
     'ui.jp',
-    'angular-loading-bar'
+    'angular-loading-bar',
+    'MessageCenterModule'
   ]);

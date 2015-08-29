@@ -1,7 +1,8 @@
 ﻿'use strict';
 angular.module('app')
-    .service('authService', ['$http', '$q', '$location',
-    function ($http, $q, $location) {
+    .service('authService', ['$http', '$q', '$location', '$localStorage',
+    function ($http, $q, $location, $localStorage) {
+ 
     var self = this;
     this.isAdmin = false;
     this.isInternal = false;
@@ -9,10 +10,15 @@ angular.module('app')
     this.userName = "";
     this.userId = "";
 
+    var _authentication = {
+        isAuth: false,
+        userName: ""
+    };
+
     this.getCurrent = function () {
         console.log("getCurrent called");
         var deferred = $q.defer();
-        var url = '/api/account/GetCurrent';
+        var url = '/api/user/GetCurrent';
         $http({ method: 'POST', url: url }).
          success(function (data, status, headers, config) {
              self.isAdmin = data.isAdmin;
@@ -87,6 +93,39 @@ angular.module('app')
 
          });
         return deferred.promise;
+    };
+
+    this.login = function (user) {
+
+        var data = "grant_type=password&username=" + user.email + "&password=" + user.password;
+
+        var deferred = $q.defer();
+
+        $http.post('/token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
+
+            localStorageService.set('authorizationData', { token: response.access_token, userName: loginData.userName });
+
+            _authentication.isAuth = true;
+            _authentication.userName = loginData.userName;
+
+            deferred.resolve(response);
+
+        }).error(function (err, status) {
+            self.logOut();
+            deferred.reject(err);
+        });
+
+        return deferred.promise;
+
+    };
+
+    this.logOut = function () {
+
+        $localStorage.remove('authorizationData');
+
+        //_authentication.isAuth = false;
+        //_authentication.userName = "";
+
     };
 
 }]);

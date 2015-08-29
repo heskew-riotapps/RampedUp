@@ -319,6 +319,7 @@
     <Content Include="Client\scripts\app\controllers\fromTheme\tree.js" />
     <Content Include="Client\scripts\app\controllers\fromTheme\upload.js" />
     <Content Include="Client\scripts\app\controllers\fromTheme\vectormap.js" />
+    <Content Include="Client\scripts\app\directives\app\messageService.js" />
     <Content Include="Client\scripts\app\directives\fromTheme\lazyload.js" />
     <Content Include="Client\scripts\app\directives\fromTheme\ui-fullscreen.js" />
     <Content Include="Client\scripts\app\directives\fromTheme\ui-jp.js" />
