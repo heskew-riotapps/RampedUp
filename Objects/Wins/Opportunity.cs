@@ -8,16 +8,13 @@ using RampedUp.Objects.Interfaces;
 
 namespace RampedUp.Objects.Wins
 {
-    public class Win : IAuditable
+    public class Opportunity : IAuditable
     {
         public Guid Id { get; set; }
         public DateTime CloseDate { get; set; }
         public DateTime OpportunityCreateDate { get; set; }
 
-        /// <summary>
-        /// derived
-        /// </summary>
-        [NotMapped]
+        public WinEnums.eOpportunityStatus StatusId { get; set; }
         public int DealLength { get; set; }
         public int Amount { get; set; }
 
@@ -34,9 +31,9 @@ namespace RampedUp.Objects.Wins
 
         public Guid RepId { get; set; }
 
-        public int DealTypeId { get; set; }
+        //public int DealTypeId { get; set; }
 
-        public string WinStory { get; set; }
+        public string RepNarrative { get; set; }
 
         public Guid ManagerId { get; set; }
 

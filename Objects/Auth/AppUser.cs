@@ -44,8 +44,8 @@ namespace RampedUp.Objects.Auth
 
         public Guid? AccountId { get; set; }
 
-        [MaxLength(200)]
-        public string Company { get; set; }
+        //[MaxLength(200)]
+        //public string Company { get; set; }
 
         [MaxLength(128)]
         public string CreatedBy { get; set; }

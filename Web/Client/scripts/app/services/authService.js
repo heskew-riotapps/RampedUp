@@ -103,7 +103,8 @@ angular.module('app')
 
         $http.post('/token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
 
-            localStorageService.set('authorizationData', { token: response.access_token, userName: loginData.userName });
+           // localStorageService.set('authorizationData', { token: response.access_token, userName: loginData.userName });
+            $localStorage.authorizationData = { token: response.access_token, userName: loginData.userName };
 
             _authentication.isAuth = true;
             _authentication.userName = loginData.userName;
@@ -121,7 +122,8 @@ angular.module('app')
 
     this.logOut = function () {
 
-        $localStorage.remove('authorizationData');
+        //$localStorage.remove('authorizationData');
+        delete $localStorage.authorizationData
 
         //_authentication.isAuth = false;
         //_authentication.userName = "";

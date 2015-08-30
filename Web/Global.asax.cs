@@ -6,6 +6,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Data.Entity;
+using MySql.Data.Entity;
 
 namespace RampedUp.Web
 {
@@ -20,6 +22,7 @@ namespace RampedUp.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             log4net.Config.XmlConfigurator.Configure();
+            DbConfiguration.SetConfiguration(new MySqlEFConfiguration());
         }
     }
 }

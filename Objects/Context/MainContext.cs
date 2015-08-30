@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using MySql.Data.Entity;
+using RampedUp.Objects.Wins;
 
 namespace RampedUp.Objects.Context
 {
+
+    [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class MainContext : DbContext
     {
        public MainContext(string connString) : base(connString) { }
@@ -16,6 +20,6 @@ namespace RampedUp.Objects.Context
             this.Configuration.LazyLoadingEnabled = lazyLoadingEnabled;
         }
 
-     //  public DbSet<Win> Users { get; set; }
+       public DbSet<Opportunity> Opportunities { get; set; }
     }
 }

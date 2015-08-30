@@ -28,6 +28,7 @@ app.controller('signinController', ['$scope', '$rootScope', 'authService', '$tra
                     $state.go('dashboard')
                 },
                 function (err) {
+                    debugger;
                     $scope.saving = false;
                     $scope.loginInProcess = false;
 

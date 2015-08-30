@@ -23,15 +23,13 @@ namespace RampedUp.Web.Providers
         private static readonly ILog logger = LogManager.GetLogger(typeof(ApplicationOAuthProvider));
         private readonly string _publicClientId;
 
-        //public ApplicationOAuthProvider(string publicClientId)
-        //{
-        //    if (publicClientId == null)
-        //    {
-        //        throw new ArgumentNullException("publicClientId");
-        //    }
+        public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
+        {
+         
 
-        //    _publicClientId = publicClientId;
-        //}
+            context.Validated();
+            return Task.FromResult<object>(null);
+        }
 
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)

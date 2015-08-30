@@ -32,3 +32,5 @@ C:\Users\Hunter\Documents\GitHub\RampedUp\Objects\obj\Debug\RampedUp.Objects.pdb
 C:\Users\Hunter\Documents\GitHub\RampedUp\Objects\bin\Debug\Autofac.dll
 C:\Users\Hunter\Documents\GitHub\RampedUp\Objects\bin\Debug\Autofac.xml
 C:\Users\Hunter\Documents\GitHub\RampedUp\Objects\obj\Debug\Objects.csprojResolveAssemblyReference.cache
+C:\Users\Hunter\Documents\GitHub\RampedUp\Objects\bin\Debug\MySql.Data.dll
+C:\Users\Hunter\Documents\GitHub\RampedUp\Objects\bin\Debug\MySql.Data.Entity.EF6.dll

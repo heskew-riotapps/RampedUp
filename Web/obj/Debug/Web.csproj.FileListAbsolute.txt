@@ -21,7 +21,6 @@ C:\Users\Hunter\Documents\GitHub\RampedUp\Web\bin\Microsoft.Owin.Security.Micros
 C:\Users\Hunter\Documents\GitHub\RampedUp\Web\bin\Microsoft.Owin.Security.OAuth.dll
 C:\Users\Hunter\Documents\GitHub\RampedUp\Web\bin\Microsoft.Owin.Security.Twitter.dll
 C:\Users\Hunter\Documents\GitHub\RampedUp\Web\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Hunter\Documents\GitHub\RampedUp\Web\bin\MySql.Data.dll
 C:\Users\Hunter\Documents\GitHub\RampedUp\Web\bin\Nest.dll
 C:\Users\Hunter\Documents\GitHub\RampedUp\Web\bin\Newtonsoft.Json.dll
 C:\Users\Hunter\Documents\GitHub\RampedUp\Web\bin\Owin.dll
@@ -78,3 +77,6 @@ C:\Users\Hunter\Documents\GitHub\RampedUp\Web\bin\Microsoft.Owin.Security.Micros
 C:\Users\Hunter\Documents\GitHub\RampedUp\Web\bin\System.Web.Http.Owin.xml
 C:\Users\Hunter\Documents\GitHub\RampedUp\Web\obj\Debug\RampedUp.Web.dll
 C:\Users\Hunter\Documents\GitHub\RampedUp\Web\obj\Debug\RampedUp.Web.pdb
+C:\Users\Hunter\Documents\GitHub\RampedUp\Web\bin\MySql.Data.Entity.EF6.dll
+C:\Users\Hunter\Documents\GitHub\RampedUp\Web\bin\MySql.Data.dll
+C:\Users\Hunter\Documents\GitHub\RampedUp\Web\bin\MySql.Web.dll
