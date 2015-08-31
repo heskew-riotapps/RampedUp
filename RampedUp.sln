@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Reso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Themes", "Themes\Themes.csproj", "{0C706E27-C3E5-4287-B079-DF99080677ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{4BFA61BC-6637-45B3-AF00-60AE7E77D535}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{0C706E27-C3E5-4287-B079-DF99080677ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C706E27-C3E5-4287-B079-DF99080677ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C706E27-C3E5-4287-B079-DF99080677ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BFA61BC-6637-45B3-AF00-60AE7E77D535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BFA61BC-6637-45B3-AF00-60AE7E77D535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BFA61BC-6637-45B3-AF00-60AE7E77D535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BFA61BC-6637-45B3-AF00-60AE7E77D535}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

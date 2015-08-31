@@ -1,0 +1,25 @@
+CREATE TABLE `opportunity` (
+  `Id` char(36) NOT NULL,
+  `CloseDate` datetime DEFAULT NULL,
+  `OpportunityCreateDate` datetime DEFAULT NULL,
+  `StatusId` tinyint(1) not null,
+  `DealLength` int(11)  null,
+  `Amount` int(11) null,
+  `MonthsUnderContract`  int(11) null,
+  `Competitor` varchar(128)  null,
+  `Industry` varchar(128) null,
+  `Buyer`  varchar(128)  null,
+  `RepId` char(36) NULL,
+  `DealTypeId` tinyint(1) null,
+  `RepNarrative` LONGTEXT  NULL,
+  `ManagerId` char(36) not null,
+  `Source` varchar(128) not null,
+  `Headline` varchar(1000) not null,
+  `AccountId` char(36) not null,
+  `CreatedBy` varchar(128) NOT NULL,
+  `CreatedOn` datetime NOT NULL,
+  `UpdatedBy` varchar(128) NOT NULL,
+  `UpdatedOn` datetime NOT NULL,
+  PRIMARY KEY (`Id`)
+);
+        

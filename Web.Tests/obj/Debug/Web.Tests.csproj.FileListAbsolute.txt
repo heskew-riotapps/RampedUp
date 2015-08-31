@@ -58,3 +58,7 @@ C:\Users\Hunter\Documents\GitHub\RampedUp\Web.Tests\bin\Debug\EntityFramework.xm
 C:\Users\Hunter\Documents\GitHub\RampedUp\Web.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Hunter\Documents\GitHub\RampedUp\Web.Tests\obj\Debug\RampedUp.Web.Tests.dll
 C:\Users\Hunter\Documents\GitHub\RampedUp\Web.Tests\obj\Debug\RampedUp.Web.Tests.pdb
+C:\Users\Hunter\Documents\GitHub\RampedUp\Web.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Hunter\Documents\GitHub\RampedUp\Web.Tests\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Hunter\Documents\GitHub\RampedUp\Web.Tests\bin\Debug\MySql.Data.dll
+C:\Users\Hunter\Documents\GitHub\RampedUp\Web.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml

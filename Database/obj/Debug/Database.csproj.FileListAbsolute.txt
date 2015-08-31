@@ -1,0 +1,5 @@
+C:\Users\Hunter\Documents\GitHub\RampedUp\Database\bin\Debug\Database.dll
+C:\Users\Hunter\Documents\GitHub\RampedUp\Database\bin\Debug\Database.pdb
+C:\Users\Hunter\Documents\GitHub\RampedUp\Database\obj\Debug\Database.csprojResolveAssemblyReference.cache
+C:\Users\Hunter\Documents\GitHub\RampedUp\Database\obj\Debug\Database.dll
+C:\Users\Hunter\Documents\GitHub\RampedUp\Database\obj\Debug\Database.pdb
