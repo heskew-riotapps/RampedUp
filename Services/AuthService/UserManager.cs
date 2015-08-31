@@ -17,17 +17,17 @@ namespace RampedUp.Services.AuthService
     {
       //  async Task<AppUser> RegisterUserAsync(AppUserModel userModel)
     }
-    public class UserManager : IAuthManager, IDisposable
+    public class AppUserManager : IAuthManager, IDisposable
     {
         
         private MainContext _mainCtx;
 
-        private IdentityManager _userManager;
+        private IdentityManager _identityManager;
         private RoleManager<IdentityRole> _roleManager;
 
-        public UserManager(IdentityManager userManager)
+        public AppUserManager(IdentityManager identityManager)
         {
-            this._userManager = userManager;
+            this._identityManager = identityManager;
         }
 
         public async Task<AppUser> RegisterUserAsync(AppUserModel userModel)
@@ -46,7 +46,7 @@ namespace RampedUp.Services.AuthService
                 TermsAcceptedOn = DateTime.UtcNow
             };
 
-            var result = await this._userManager.CreateAsync(user, userModel.Password);
+            var result = await this._identityManager.CreateAsync(user, userModel.Password);
 
             //add user to default role
             if (result.Succeeded)
@@ -68,14 +68,21 @@ namespace RampedUp.Services.AuthService
 
         public async Task<AppUser> FindUserAsync(string userName, string password)
         {
-            AppUser user = await _userManager.FindAsync(userName, password);
+            AppUser user = await _identityManager.FindAsync(userName, password);
 
             return user;
         }
 
+        //public async Task<AppUser> FindUserByIdAsync(Guid id)
+        //{
+        //    AppUser user = await _identityManager.fin(id.ToString());
+
+        //    return user;
+        //}
+
         public void Dispose()
         {
-            this._userManager = null;
+            this._identityManager = null;
         }
     }
 }

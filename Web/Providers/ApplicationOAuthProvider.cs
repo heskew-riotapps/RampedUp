@@ -40,7 +40,7 @@ namespace RampedUp.Web.Providers
             AppUser user = null;
             var role = string.Empty;
 
-            using (UserManager _mgr = new UserManager(HttpContext.Current.GetOwinContext().GetUserManager<RampedUp.Services.AuthService.IdentityManager>()))
+            using (AppUserManager _mgr = new AppUserManager(HttpContext.Current.GetOwinContext().GetUserManager<RampedUp.Services.AuthService.IdentityManager>()))
             {
                 user = await _mgr.FindUserAsync(context.UserName, context.Password);
                 //if (user != null && user.Roles != null && user.Roles.Count > 0)

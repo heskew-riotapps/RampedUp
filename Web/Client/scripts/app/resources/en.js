@@ -1,4 +1,7 @@
 var enTranslations = {
+    "General": {
+        "ErrorPrepend": "Error: "
+    },
     "Header": {
         "AppName": "RampedUp.io",
         "NavBar": {
@@ -8,7 +11,8 @@ var enTranslations = {
         }
     },
     "Buttons":{
-        "Save": "Save"
+        "Save": "Save",
+        "Saving": "Saving"
     },
     "Views": {
         "Kickstarter": {
@@ -38,7 +42,19 @@ var enTranslations = {
                 "Email": "someone@example.com",
                 "Password": "Password"
             }
+        },
+        "AddOpportunity": {
+            "Title": "Add Opportunity",
+            "Labels": {
+                "SubTitle": "Competitor Information",
+                "Competitor": "Competitor",
+                "Industry": "Industry",
+                "Instructions": "Enter competitor data here"
+            },
+            "Messages": {
+                "SaveOK": "Here is how to translate with a paramter...id= {{opportunityId}}"
+            }
         }
-
     }
 }
+""

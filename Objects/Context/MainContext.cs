@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using MySql.Data.Entity;
 using RampedUp.Objects.Wins;
+using RampedUp.Objects.Auth;
 
 namespace RampedUp.Objects.Context
 {
@@ -21,5 +22,6 @@ namespace RampedUp.Objects.Context
         }
 
        public DbSet<Opportunity> Opportunities { get; set; }
+      // public DbSet<AppUser> AppUsers { get; set; }  <-- changing this to new User object because identity is a pain here
     }
 }

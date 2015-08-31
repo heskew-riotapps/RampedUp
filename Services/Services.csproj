@@ -90,11 +90,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountService\AccountManager.cs" />
     <Compile Include="AuthService\IdentityManager.cs" />
     <Compile Include="AuthService\UserManager.cs" />
     <Compile Include="AuthService\Models\AppUserModel.cs" />
+    <Compile Include="Common\Constants.cs" />
     <Compile Include="Ioc\IocConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserService\UserManager.cs" />
+    <Compile Include="WinService\Models\AddOpportunityModel.cs" />
+    <Compile Include="WinService\OpportunityManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

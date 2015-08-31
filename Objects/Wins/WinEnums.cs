@@ -10,11 +10,14 @@ namespace RampedUp.Objects.Wins
     {
         public enum eOpportunityStatus
         {
+            //placeholder values, not sure what the status are just yet
             NotProvided = 0,
-            Closed = 1,
+            Open = 1,
             Lost = 2,
-            Won = 3
+            Won = 3,
+            Closed = 4
         }
 
+       
     }
 }

@@ -40,7 +40,12 @@ angular.module('app')
               .state('app.home', {
                   url: '/home',
                   templateUrl: 'api/views/a/samples/streamline'
-
+                  
+              })
+              .state('app.addopportunity', {
+                  url: '/addopportunity',
+                  templateUrl: 'api/views/a/wins/addopportunity',
+                  controller: 'addOpportunityController'
               })
 
          .state('app.kickstarter', {

@@ -10,6 +10,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace RampedUp.Objects.Auth
 {
+     
     public class AppUser : IdentityUser
     {  
         public enum eStatus

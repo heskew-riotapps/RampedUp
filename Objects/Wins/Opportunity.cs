@@ -8,6 +8,7 @@ using RampedUp.Objects.Interfaces;
 
 namespace RampedUp.Objects.Wins
 {
+    [Table("Opportunity")]
     public class Opportunity : IAuditable
     {
         public Guid Id { get; set; }

@@ -93,7 +93,8 @@
     <Compile Include="Context\MainContext.cs" />
     <Compile Include="Interfaces\IAuditable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Wins\Win.cs" />
+    <Compile Include="Wins\Opportunity.cs" />
+    <Compile Include="Wins\WinEnums.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

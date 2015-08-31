@@ -7,6 +7,7 @@ using System.Web.Http;
 
 namespace RampedUp.Web.Controllers.WebApi
 {
+    [RoutePrefix("api/User")]
     public class UserController : ApiController
     {
     }
