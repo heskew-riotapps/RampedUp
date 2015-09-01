@@ -3,3 +3,5 @@ C:\Users\Hunter\Documents\GitHub\RampedUp\Resources\bin\Debug\RampedUp.Resources
 C:\Users\Hunter\Documents\GitHub\RampedUp\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
 C:\Users\Hunter\Documents\GitHub\RampedUp\Resources\obj\Debug\RampedUp.Resources.dll
 C:\Users\Hunter\Documents\GitHub\RampedUp\Resources\obj\Debug\RampedUp.Resources.pdb
+C:\Users\Hunter\Documents\GitHub\RampedUp\Resources\obj\Debug\RampedUp.Resources.Strings.Exceptions.resources
+C:\Users\Hunter\Documents\GitHub\RampedUp\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
